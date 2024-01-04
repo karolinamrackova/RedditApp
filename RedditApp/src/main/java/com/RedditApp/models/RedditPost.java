@@ -1,11 +1,8 @@
-package com.redditapp.models;
+package com.RedditApp.models;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
+
 import java.time.LocalDate;
-import java.util.Date;
-import java.util.HashSet;
-import java.util.Locale;
-import java.util.Set;
 
 @Entity
 @Table(name = "posts")

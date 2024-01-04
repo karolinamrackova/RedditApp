@@ -1,8 +1,8 @@
-package com.redditapp.repositories;
+package com.RedditApp.repositories;
 
-import com.redditapp.models.RedditPost;
-import com.redditapp.models.User;
-import com.redditapp.models.Vote;
+import com.RedditApp.models.RedditPost;
+import com.RedditApp.models.User;
+import com.RedditApp.models.Vote;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

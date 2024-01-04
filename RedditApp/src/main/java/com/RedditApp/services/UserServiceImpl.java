@@ -1,7 +1,7 @@
-package com.redditapp.services;
+package com.RedditApp.services;
 
-import com.redditapp.models.User;
-import com.redditapp.repositories.UserRepository;
+import com.RedditApp.models.User;
+import com.RedditApp.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

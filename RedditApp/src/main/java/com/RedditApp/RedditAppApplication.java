@@ -1,4 +1,4 @@
-package com.redditapp;
+package com.RedditApp;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

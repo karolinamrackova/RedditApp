@@ -1,7 +1,6 @@
-package com.redditapp.models;
+package com.RedditApp.models;
 
-import javax.persistence.*;
-import java.util.HashSet;
+import jakarta.persistence.*;
 import java.util.Set;
 
 @Entity

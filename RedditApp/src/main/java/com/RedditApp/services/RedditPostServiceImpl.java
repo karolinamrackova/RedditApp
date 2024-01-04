@@ -1,22 +1,19 @@
-package com.redditapp.services;
+package com.RedditApp.services;
 
-import com.redditapp.models.RedditPost;
-import com.redditapp.models.User;
-import com.redditapp.models.Vote;
-import com.redditapp.repositories.RedditPostRepository;
-import com.redditapp.repositories.UserRepository;
-import com.redditapp.repositories.VoteRepository;
+import com.RedditApp.models.RedditPost;
+import com.RedditApp.models.User;
+import com.RedditApp.models.Vote;
+import com.RedditApp.repositories.RedditPostRepository;
+import com.RedditApp.repositories.UserRepository;
+import com.RedditApp.repositories.VoteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
-import java.util.Comparator;
-import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 @Service
 public class RedditPostServiceImpl implements RedditPostService {
@@ -95,17 +92,3 @@ public class RedditPostServiceImpl implements RedditPostService {
     }
 }
 
-
-  /*  @Override
-    public List<RedditPost> showAll() {
-        return redditPostRepository.findAll().stream().sorted(Comparator.comparingLong(RedditPost::getNumOfVotes).reversed()).collect(Collectors.toList());
-    }*/
-
-    /* @Override
-     public void upvote(long id) {
-         if (redditPostRepository.findById(id).isPresent()) {
-             RedditPost post = redditPostRepository.findById(id).get();
-             post.setNumOfVotes(post.getNumOfVotes() + 1);
-             redditPostRepository.save(post);
-         }
-     }*/

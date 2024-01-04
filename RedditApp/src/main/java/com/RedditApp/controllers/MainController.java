@@ -1,7 +1,7 @@
-package com.redditapp.controllers;
+package com.RedditApp.controllers;
 
-import com.redditapp.services.RedditPostService;
-import com.redditapp.services.UserService;
+import com.RedditApp.services.RedditPostService;
+import com.RedditApp.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

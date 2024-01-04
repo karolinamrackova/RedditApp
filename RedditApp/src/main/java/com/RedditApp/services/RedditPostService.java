@@ -1,10 +1,7 @@
-package com.redditapp.services;
+package com.RedditApp.services;
 
-import com.redditapp.models.RedditPost;
+import com.RedditApp.models.RedditPost;
 import org.springframework.data.domain.Page;
-import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 
 public interface RedditPostService {

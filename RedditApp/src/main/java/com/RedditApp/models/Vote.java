@@ -1,6 +1,6 @@
-package com.redditapp.models;
+package com.RedditApp.models;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "votes")
