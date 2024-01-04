@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Reddit from Wish</title>
+</head>
+<body>
+        <p th:unless="${currentUser==null}" th:text="'Current user: '+${currentUser}+' | '" style="display: inline;"></p>
+        <a th:unless="${currentUser==null}" th:href="@{/}" style="display: inline;">Log out</a>
+        <p th:if="${currentUser==null}" th:text="'Current user: not logged in | '" style="display: inline;"></p>
+        <a th:if="${currentUser==null}" th:href="@{/login}" style="display: inline;">Login</a>
+        <p th:if="${currentUser==null}" th:text="' | '" style="display: inline;"></p>
+        <a th:if="${currentUser==null}" th:href="@{/register}" style="display: inline;">Register</a>
+    <h1>Welcome to definitely very legit Reddit</h1>
+    <img src="https://media.npr.org/assets/img/2023/05/26/honest-work-meme-cb0f0fb2227fb84b77b3c9a851ac09b095ab74d8-s900-c85.webp"
+         alt="it ain't much, but it's honest work meme" width="250px">
+    <h2 th:text="'Posts ('+${databaseSize}+'):'"></h2>
+    <table>
+        <tr style="background: yellowgreen;">
+            <td>Upvote</td>
+            <td>Downvote</td>
+            <td>Post upvotes</td>
+            <td>Post title</td>
+            <td>Author</td>
+            <td>Date posted</td>
+
+        </tr>
+        <tr th:each="post: ${posts}">
+            <td>
+                <a th:href="@{/upvote(username=${currentUser},id=${post.getPostId()},page=${currentPage})}">+</a>
+            </td>
+            <td>
+                <a th:href="@{/downvote(username=${currentUser},id=${post.getPostId()},page=${currentPage})}">-</a>
+            </td>
+            <td th:text="${post.getNumOfVotes()}"></td>
+            <td th:text="${post.getTitle()}"></td>
+            <td th:unless="${post.getAuthor_username() == null}" th:text="${post.getAuthor_username()}"></td>
+            <td th:if="${post.getAuthor_username() == null}" th:text="'anonymous'"></td>
+            <td th:unless="${post.getDate() == null}" th:text="${post.getDate()}"></td>
+            <td th:if="${post.getDate() == null}" th:text="'date not available'"></td>
+        </tr>
+    </table>
+    <a th:unless="${currentPage}<1" th:href="@{/(username=${currentUser},page=${currentPage}-1)}">Previous page</a>
+    <a th:unless="${lastPage}" th:href="@{/(username=${currentUser},page=${currentPage}+1)}">Next page</a>
+
+    <h3>
+        <a th:href="@{/submit(username=${currentUser})}">New Post</a> <br>
+<!--        <a th:href="@{/login}">Login</a> <br>-->
+<!--        <a th:href="@{/register}">Register</a>-->
+    </h3>
+</body>
+</html>
